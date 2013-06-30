@@ -1,4 +1,8 @@
-﻿namespace PrivateZone.Core.Domain
+﻿using System;
+using System.Security.Cryptography;
+using System.Text;
+
+namespace PrivateZone.Core.Domain
 {
     public class User : BaseEntity
     {
