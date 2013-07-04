@@ -1,8 +1,14 @@
-﻿using System.Web.Routing;
+﻿//using System.Web.Routing;
+
+using System.Web.Routing;
+using MvcRouteTester;
 using NUnit.Framework;
 using PrivateZone.Web;
-using MvcRouteTester;
+//using MvcRouteTester;
 using PrivateZone.Web.Controllers;
+
+using SharpTestsEx;
+using SharpTestsEx.Mvc;
 
 namespace PrivateZone.Tests.Web.Configs
 {
