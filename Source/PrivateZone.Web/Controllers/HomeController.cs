@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using PrivateZone.Web.BL;
+using PrivateZone.Web.BL.Security;
 
 namespace PrivateZone.Web.Controllers
 {

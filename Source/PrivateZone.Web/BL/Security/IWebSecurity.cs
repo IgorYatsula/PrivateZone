@@ -1,6 +1,6 @@
-﻿namespace PrivateZone.Web.BL
+﻿namespace PrivateZone.Web.BL.Security
 {
-    public interface IZoneMembershipProvider
+    public interface IWebSecurity
     {
         bool Login(string userName, string password, bool persistCookie = false);
         void Logout();

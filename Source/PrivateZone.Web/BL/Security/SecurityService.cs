@@ -1,6 +1,6 @@
 ﻿using WebMatrix.WebData;
 
-namespace PrivateZone.Web.BL
+namespace PrivateZone.Web.BL.Security
 {
     public class SecurityService : IWebSecurity
     {

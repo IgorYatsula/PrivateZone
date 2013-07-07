@@ -115,10 +115,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BL\ZoneMembershipProvider.cs" />
-    <Compile Include="BL\IZoneMembershipProvider.cs" />
-    <Compile Include="BL\IWebSecurity.cs" />
-    <Compile Include="BL\SecurityService.cs" />
+    <Compile Include="BL\Security\ZoneMembershipProvider.cs" />
+    <Compile Include="BL\Security\IZoneMembershipProvider.cs" />
+    <Compile Include="BL\Security\IWebSecurity.cs" />
+    <Compile Include="BL\Security\SecurityService.cs" />
+    <Compile Include="BL\Security\ZoneMembershipUser.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

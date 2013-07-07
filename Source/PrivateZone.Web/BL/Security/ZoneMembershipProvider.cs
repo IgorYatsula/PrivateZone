@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Web.Security;
 using WebMatrix.WebData;
 
-namespace PrivateZone.Web.BL
+namespace PrivateZone.Web.BL.Security
 {
     public class ZoneMembershipProvider : ExtendedMembershipProvider, IZoneMembershipProvider
     {
