@@ -1,9 +1,0 @@
-C:\PROJECTS\GitHub\PrivateZone\App\PrivateZone.Core\obj\Debug\PrivateZone.Core.csprojResolveAssemblyReference.cache
-C:\PROJECTS\GitHub\PrivateZone\App\PrivateZone.Core\bin\Debug\PrivateZone.Core.dll
-C:\PROJECTS\GitHub\PrivateZone\App\PrivateZone.Core\bin\Debug\PrivateZone.Core.pdb
-C:\PROJECTS\GitHub\PrivateZone\App\PrivateZone.Core\bin\Debug\MongoDB.Bson.dll
-C:\PROJECTS\GitHub\PrivateZone\App\PrivateZone.Core\bin\Debug\MongoDB.Driver.dll
-C:\PROJECTS\GitHub\PrivateZone\App\PrivateZone.Core\bin\Debug\MongoDB.Bson.xml
-C:\PROJECTS\GitHub\PrivateZone\App\PrivateZone.Core\bin\Debug\MongoDB.Driver.xml
-C:\PROJECTS\GitHub\PrivateZone\App\PrivateZone.Core\obj\Debug\PrivateZone.Core.dll
-C:\PROJECTS\GitHub\PrivateZone\App\PrivateZone.Core\obj\Debug\PrivateZone.Core.pdb
