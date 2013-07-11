@@ -48,9 +48,15 @@
     <Compile Include="..\..\Common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Data\Finder.cs" />
+    <Compile Include="Data\IFinder.cs" />
+    <Compile Include="Data\IRepository.cs" />
     <Compile Include="Domain\BaseEntity.cs" />
     <Compile Include="Domain\User.cs" />
+    <Compile Include="Exceptions\Check.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Specifications\Base\ISpecification.cs" />
+    <Compile Include="Specifications\Base\Specification.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

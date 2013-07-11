@@ -4,7 +4,7 @@ namespace PrivateZone.Core.Domain
 {
     public abstract class BaseEntity
     {
-        public ObjectId Id { get; private set; }
+        public ObjectId Id { get; protected set; }
 
         protected BaseEntity()
         {

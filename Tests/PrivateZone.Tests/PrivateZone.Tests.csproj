@@ -109,7 +109,13 @@
     <Compile Include="..\..\Common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Core\BaseEntityTests.cs" />
+    <Compile Include="Core\Domain\BaseEntityTests.cs" />
+    <Compile Include="Core\Data\FinderTests.cs" />
+    <Compile Include="Core\Exceptions\CheckTests.cs" />
+    <Compile Include="Core\Specifications\SpecificationTests.cs" />
+    <Compile Include="Data\RepositoryTests.cs" />
+    <Compile Include="Infrastructure\Fakes\TrueSpecification.cs" />
+    <Compile Include="Infrastructure\Fakes\FakeEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web\Configs\RouteConfigTests.cs" />
     <Compile Include="Web\Controllers\HomeControllerTests.cs" />
@@ -120,9 +126,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\App\PrivateZone.Core\PrivateZone.Core.csproj">
       <Project>{9221fb22-720f-4422-a486-afb7390aaa80}</Project>

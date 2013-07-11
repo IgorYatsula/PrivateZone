@@ -11,43 +11,43 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
 using MongoDB.Driver.GridFS;
+using MongoDB.Driver.Linq;
+using PrivateZone.Core.Data;
+using PrivateZone.Core.Specifications.Base;
 
 namespace PrivateZone.Data
 {
-    public class Repository : IRepository
+    public class Repository<TEntity> : IRepository<TEntity>
     {
-        private readonly string connection;
-        private readonly MongoDatabase db;
-        private readonly MongoClient client;
+        private readonly MongoCollection<TEntity> collection;
 
-        public Repository(string connection)
+        public Repository(string connectionString)
         {
-            this.connection = connection;
-            var mongoUrl = new MongoUrl(this.connection);
-            this.client = new MongoClient(mongoUrl);
-            this.db = this.client.GetServer().GetDatabase(mongoUrl.DatabaseName);
+            var mongoUrl = new MongoUrl(connectionString);
+            var mongoClient = new MongoClient(mongoUrl);
+            var database = mongoClient.GetServer().GetDatabase(mongoUrl.DatabaseName);
+            this.collection = database.GetCollection<TEntity>(typeof(TEntity).Name);
         }
 
-        public void SaveOrUpdate<T>(T document)
+        public Repository(MongoCollection<TEntity> collection)
         {
-            this.GetCollection<T>().Save(document);
+            this.collection = collection;
         }
 
-        public void Remove<T>(Expression<Func<T, bool>> expression)
+        public void SaveOrUpdate(TEntity entity)
         {
-            IMongoQuery query = Query<T>.Where(expression);
-            this.Remove<T>(query);
+            this.collection.Save(entity);
         }
 
-        private void Remove<T>(IMongoQuery query)
+        public void Remove(ISpecification<TEntity> spec)
         {
-            this.GetCollection<T>().Remove(query);
+            IMongoQuery query = Query<TEntity>.Where(spec.Predicate);
+            this.collection.Remove(query);
         }
 
-        private MongoCollection<T> GetCollection<T>()
+        public IFinder<TEntity> Find
         {
-            var collectionName = typeof (T).Name.Pluralize();
-            return this.db.GetCollection<T>(collectionName);
+            get { return new Finder<TEntity>(this.collection.AsQueryable()); }
         }
     }
 }

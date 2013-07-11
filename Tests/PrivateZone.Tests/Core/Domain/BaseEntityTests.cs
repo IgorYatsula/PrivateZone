@@ -3,7 +3,7 @@ using NUnit.Framework;
 using PrivateZone.Core.Domain;
 using SharpTestsEx;
 
-namespace PrivateZone.Tests.Core
+namespace PrivateZone.Tests.Core.Domain
 {
     public class BaseEntityTests
     {
