@@ -115,6 +115,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\Common\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="BL\Security\ZoneMembershipProvider.cs" />
     <Compile Include="BL\Security\IZoneMembershipProvider.cs" />
     <Compile Include="BL\Security\IWebSecurity.cs" />
