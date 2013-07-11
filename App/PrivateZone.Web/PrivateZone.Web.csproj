@@ -41,6 +41,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\packages\Castle.Core.3.2.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\packages\Castle.Windsor.3.2.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor.Mvc">
+      <HintPath>..\..\packages\Castle.Windsor.Mvc.1.1.0.0\lib\net45\Castle.Windsor.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -159,6 +168,10 @@
     <ProjectReference Include="..\PrivateZone.Core\PrivateZone.Core.csproj">
       <Project>{9221fb22-720f-4422-a486-afb7390aaa80}</Project>
       <Name>PrivateZone.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PrivateZone.Locator\PrivateZone.Locator.csproj">
+      <Project>{7f53ed97-8658-407c-b6dd-0f30f8e86230}</Project>
+      <Name>PrivateZone.Locator</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

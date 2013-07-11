@@ -1,12 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Security;
+using PrivateZone.Core.Data;
+using PrivateZone.Core.Domain;
+using PrivateZone.Core.Specifications;
+using PrivateZone.Locator;
 using WebMatrix.WebData;
 
 namespace PrivateZone.Web.BL.Security
 {
     public class ZoneMembershipProvider : ExtendedMembershipProvider, IZoneMembershipProvider
     {
+        public IRepository<User> UserRepository
+        {
+            get { return IoC.Current.Container.Resolve<IRepository<User>>(); }
+        }
+
+
         #region IZoneMembershipProvider
 
         public bool Login(string userName, string password, bool persistCookie = false)
@@ -55,7 +65,8 @@ namespace PrivateZone.Web.BL.Security
 
         public override bool ValidateUser(string username, string password)
         {
-            throw new NotImplementedException();
+            var user = UserRepository.Find.One(UserSpecifications.ByNameAndPassword(username, password));
+            return user != null;
         }
 
         public override bool UnlockUser(string userName)

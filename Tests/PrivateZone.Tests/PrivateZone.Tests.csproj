@@ -113,6 +113,7 @@
     <Compile Include="Core\Data\FinderTests.cs" />
     <Compile Include="Core\Exceptions\CheckTests.cs" />
     <Compile Include="Core\Specifications\SpecificationTests.cs" />
+    <Compile Include="Core\Specifications\UserSpecificationsTests.cs" />
     <Compile Include="Data\RepositoryTests.cs" />
     <Compile Include="Infrastructure\Fakes\TrueSpecification.cs" />
     <Compile Include="Infrastructure\Fakes\FakeEntity.cs" />
