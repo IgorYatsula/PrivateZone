@@ -178,7 +178,8 @@ namespace PrivateZone.Web.BL.Security
 
         public override string CreateAccount(string userName, string password, bool requireConfirmationToken)
         {
-            throw new NotImplementedException();
+            this.UserRepository.SaveOrUpdate(new User{Name = userName, Password = password});
+            return "OK";
         }
 
         public override bool ConfirmAccount(string userName, string accountConfirmationToken)

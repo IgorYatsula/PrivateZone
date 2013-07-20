@@ -1,0 +1,18 @@
+﻿@using PrivateZone.Web.Models
+
+@model RegisterModel
+
+@{
+    ViewBag.Title = "Registration page";
+}
+
+@*<form id="login-form" class="form-signin">*@
+    @using (Html.BeginForm("Register", "Home", FormMethod.Post, new { id = "login-form", @class = "form-signin" }))
+    {
+        <h2 class="form-signin-heading" > Please register </h2>
+        @Html.TextBoxFor(model => model.NickName, new {@class = "input-block-level", placeholder = "Nick name"})
+        @Html.TextBoxFor(model => model.Email, new {@class = "input-block-level", placeholder = "Email address"})
+        @Html.PasswordFor(model => model.Password, new {@class = "input-block-level", placeholder = "Password"})
+        @Html.PasswordFor(model => model.ConfirmPassword, new {@class = "input-block-level", placeholder = "Password confirmation"})
+        <button class="btn btn-primary" type = "submit">Register</button>
+    }

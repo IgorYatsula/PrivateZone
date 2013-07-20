@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using PrivateZone.Web.BL.Security;
+using PrivateZone.Web.Models;
 
 namespace PrivateZone.Web.Controllers
 {
@@ -17,6 +18,23 @@ namespace PrivateZone.Web.Controllers
             return View();
         }
 
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Register(RegisterModel registerModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Register");
+            }
+
+            this.securityService.Register(registerModel.NickName, registerModel.Password);
+            return RedirectToAction("Login");
+        }
+
         //[HttpPost]
         [AllowAnonymous]
         //[ValidateAntiForgeryToken]
@@ -30,8 +48,18 @@ namespace PrivateZone.Web.Controllers
             return View();
         }
 
-        //
-        // POST: /Account/LogOff
+        [HttpPost]
+        public ActionResult Login(LoginModel loginModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Login");
+            }
+
+            ViewBag.IsLogin = this.securityService.Login(loginModel.UserName, loginModel.Password);
+
+            return RedirectToAction("Index");
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]

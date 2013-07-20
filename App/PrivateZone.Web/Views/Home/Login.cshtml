@@ -1,13 +1,18 @@
-﻿@{
+﻿@using PrivateZone.Web.Models
+
+@model LoginModel
+
+@{
     ViewBag.Title = "Login page";
 }
 
-<form id="login-form" class="form-signin">
-    <h2 class="form-signin-heading">Please sign in</h2>
-    <input type="text" class="input-block-level" placeholder="Email address">
-    <input type="password" class="input-block-level" placeholder="Password">
-    <label class="checkbox">
-        <input type="checkbox" value="remember-me"> Remember me
-    </label>
-    <button class="btn btn-primary" type="submit">Sign in</button>
-</form>
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post, new {id="login-form", @class = "form-signin"}))
+    {
+        <h2 class="form-signin-heading">Please sign in</h2>
+        @Html.TextBoxFor(model => model.UserName, new {@class = "input-block-level", placeholder = "User name"})
+        @Html.PasswordFor(model => model.Password, new {@class = "input-block-level", placeholder = "Password"})
+        <label class="checkbox">
+            <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-primary" type="submit">Sign in</button>
+    }
