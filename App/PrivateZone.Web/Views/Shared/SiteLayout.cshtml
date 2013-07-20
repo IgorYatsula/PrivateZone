@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>@ViewBag.Title</title>
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/bootstrap/css")
+    </head>
+    <body>
+        
+        <div class="container">
+            @RenderBody()
+        </div>
+        
+        @*@Scripts.Render("~/bundles/modernizr")*@
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", false)
+    </body>
+</html>
